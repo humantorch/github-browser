@@ -22,6 +22,17 @@
   <body>
 
 
+  <ul id="commitslist" class="viewList"></ul>
+
+  <script type="text/html" id="repoTemplate">
+    <p><strong><%= name %></strong></p><p><%= description %><br><small><%= pushed_at %></small></p>
+  </script>
+
+  <script type="text/html" id="commitTemplate">
+    <p><strong><%= commit.message %></strong></p><p><%= commit.committer.name %></p>
+  </script>
+
+
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -42,6 +53,15 @@
     </script>
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/RepoItem.js"></script>
+        <script src="scripts/RepoItems.js"></script>
+        <script src="scripts/RepoView.js"></script>
+        <script src="scripts/ReposView.js"></script>
+
+        <script src="scripts/CommitItem.js"></script>
+        <script src="scripts/CommitItems.js"></script>
+        <script src="scripts/CommitView.js"></script>
+        <script src="scripts/CommitsView.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

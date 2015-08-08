@@ -1,0 +1,1 @@
+var RepoItem = Backbone.Model.extend();

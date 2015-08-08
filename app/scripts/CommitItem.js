@@ -1,0 +1,1 @@
+var CommitItem = Backbone.Model.extend();
