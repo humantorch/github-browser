@@ -1,12 +1,14 @@
 $(function() {
+	window.debug = location.hash === '#debug' ? true : false;
 
-	var bus = _.extend({}, Backbone.Events);
-
-	var repoItems = new RepoItems();
+	var bus = _.extend({}, Backbone.Events),
+		repoItems = new RepoItems();
 
 	repoItems.fetch({
 		success: function() {
-			// console.log(repoItems);
+			if (debug) {
+				console.log('DEBUG: Repos data:', repoItems);
+			}
 			var reposView = new ReposView({model: repoItems, bus: bus});
 			$('#container').prepend(reposView.render().$el);
 		}

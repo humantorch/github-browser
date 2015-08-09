@@ -5,6 +5,9 @@ var RepoView = Backbone.View.extend({
 		'click': 'onClick'
 	},
 	onClick: function() {
+		if (debug) {
+			console.log('DEBUG:',this.model);
+		}
 		this.bus.trigger('repoSelected', this.model);
 		$('#repos').find('.selected').removeClass('selected');
 		this.$el.addClass('selected');
@@ -16,8 +19,8 @@ var RepoView = Backbone.View.extend({
 		}
 	},
 	render: function() {
-		var template = _.template($('#repoTemplate').html());
-		var html = template(this.model.toJSON());
+		var template = _.template($('#repoTemplate').html()),
+			html = template(this.model.toJSON());
 		this.$el.html(html);
 
 		return this;

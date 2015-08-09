@@ -13,20 +13,25 @@ var CommitsView = Backbone.View.extend({
 		// window.open(this.model.get('html_url'), '_blank');
 	},
 
-	onRepoSelected: function(commits) {
+	onRepoSelected: function(repoinfo) {
+		if (debug) {
+			console.log('DEBUG: Repository data passed to CommitsView: ',repoinfo);
+		}
+		var commits_url = (repoinfo.get('commits_url')).replace('{/sha}',''),
+			commitItems = new CommitItems(),
+			_this = this;
+
 		this.$el.empty().addClass('loading');
-		var commits_url = (commits.get('commits_url')).replace('{/sha}','');
-		var commitItems = new CommitItems();
 		commitItems.url = commits_url+'?access_token=6efa980a1997445eabbd9c90c3a0bd359e942e42';
-		var self = this;
+
 		commitItems.fetch({
 			success: function(commits) {
-				self.$el.append('<li id="visitRepo" class="ahem"><h2>Recent Commits</h2><p><a>View repo on Github <i class="fa fa-github"></i></a></p></li>');
+				_this.$el.append('<li id="visitRepo" class="ahem"><h2>Recent Commits</h2><p><a href="'+repoinfo.get('html_url')+'">View <em>'+repoinfo.get('name')+'</em> on Github <i class="fa fa-github"></i></a></p></li>');
 				commits.each(function(commitItem) {
-					var view = new CommitView({model: commitItem, bus: self.bus});
-					self.$el.append(view.render().$el).scrollTop(0);
+					var view = new CommitView({model: commitItem, bus: _this.bus});
+					_this.$el.append(view.render().$el).scrollTop(0);
 				});
-				self.$el.removeClass('loading');
+				_this.$el.removeClass('loading');
 			}
 		});
 	},
