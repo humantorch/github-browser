@@ -2,25 +2,32 @@ var ReposView = Backbone.View.extend({
 	tagName: 'ul',
 	id: 'repos',
 	className: 'viewList reposList',
+
 	events: {
 		'click #fetchMore': 'fetchMore'
 	},
+
 	initialize: function(options) {
 		if (debug) {
 			console.log('DEBUG: Repos View arguments: ',options);
 		}
+
 		this.bus = options.bus;
 		this.model.on('add', this.onRepoAdded, this);
 	},
+
 	fetchMore: function() {
 		var fetchedPage = parseInt(this.$el.attr('data-page'),10),
 			repoItems = new RepoItems(),
 			_this = this;
+
 		this.$el.attr('data-page',fetchedPage+1);
 		repoItems.url += '&page='+(fetchedPage+1);
+
 		if (debug) {
 			console.log('DEBUG: New repo data: ',repoItems);
 		}
+
 		repoItems.fetch({
 			success: function(repos) {
 				if (repos.length > 0) {
@@ -38,6 +45,7 @@ var ReposView = Backbone.View.extend({
 			}
 		});
 	},
+
 	render: function() {
 		var _this = this;
 

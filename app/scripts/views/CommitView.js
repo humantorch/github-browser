@@ -7,6 +7,7 @@ var CommitView = Backbone.View.extend({
 			throw new Error('no model');
 		}
 	},
+
 	render: function() {
 		var template = _.template($('#commitTemplate').html()),
 			html = template(this.model.toJSON());

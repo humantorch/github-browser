@@ -6,13 +6,6 @@ var CommitsView = Backbone.View.extend({
 		this.bus.on('repoSelected', this.onRepoSelected, this);
 	},
 
-	events: {
-		'click #visitRepo a': 'visitRepo'
-	},
-	visitRepo: function(){
-		// window.open(this.model.get('html_url'), '_blank');
-	},
-
 	onRepoSelected: function(repoinfo) {
 		if (debug) {
 			console.log('DEBUG: Repository data passed to CommitsView: ',repoinfo);
