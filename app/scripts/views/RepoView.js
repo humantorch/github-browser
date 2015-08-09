@@ -15,7 +15,6 @@ var RepoView = Backbone.View.extend({
 	},
 	render: function() {
 		var template = _.template($('#repoTemplate').html());
-		// console.log(this.model);
 		var html = template(this.model.toJSON());
 		this.$el.html(html);
 
