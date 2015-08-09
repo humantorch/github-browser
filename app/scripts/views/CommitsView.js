@@ -40,6 +40,9 @@ var CommitsView = Backbone.View.extend({
 		if (this.model) {
 			this.$('#reponame').html(this.model.get('name'));
 		}
+		if (debug) {
+			console.log('DEBUG: CommitsView.render()');
+		}
 
 		return this;
 	}

@@ -12,6 +12,10 @@ var CommitView = Backbone.View.extend({
 			html = template(this.model.toJSON());
 		this.$el.html(html);
 
+		if (debug) {
+			console.log('DEBUG: CommitView.render()');
+		}
+
 		return this;
 	}
 });
