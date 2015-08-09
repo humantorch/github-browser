@@ -335,6 +335,12 @@ module.exports = function (grunt) {
       }
     },
 
+    shell: {
+      upload: {
+        command: 'rsync -avh dist/ humantorch@web433.webfaction.com:/home/humantorch/webapps/github_browser'
+      }
+    },
+
     // Generates a custom Modernizr build that includes only the tests you
     // reference in your app
     modernizr: {
@@ -429,5 +435,10 @@ module.exports = function (grunt) {
     // 'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('deploy',[
+    'default',
+    'shell:upload'
   ]);
 };
