@@ -9,12 +9,14 @@ $(function() {
 			if (debug) {
 				console.log('DEBUG: Repos data:', repoItems);
 			}
-			var reposView = new ReposView({model: repoItems, bus: bus});
+			var reposView = new ReposView({model: repoItems, bus: bus}),
+				commitsView = new CommitsView({bus: bus});
+
 			$('#container').prepend(reposView.render().$el);
+			commitsView.render();
+		},
+		error: function() {
+			$('#container').html('<h3>We\'re having trouble receiving any data from Github at the moment. Please try again later.</h3>');
 		}
 	});
-
-	var commitsView = new CommitsView({bus: bus});
-	commitsView.render();
-
 });

@@ -19,12 +19,14 @@ var CommitsView = Backbone.View.extend({
 
 		commitItems.fetch({
 			success: function(commits) {
-				_this.$el.append('<li id="visitRepo" class="ahem"><h2>Recent Commits</h2><p><a href="'+repoinfo.get('html_url')+'">View <em>'+repoinfo.get('name')+'</em> on Github <i class="fa fa-github"></i></a></p></li>');
+				_this.$el.removeClass('loading').append('<li id="visitRepo" class="ahem"><h2>Recent Commits</h2><p><a href="'+repoinfo.get('html_url')+'">View <em>'+repoinfo.get('name')+'</em> on Github <i class="fa fa-github"></i></a></p></li>');
 				commits.each(function(commitItem) {
 					var view = new CommitView({model: commitItem, bus: _this.bus});
 					_this.$el.append(view.render().$el).scrollTop(0);
 				});
-				_this.$el.removeClass('loading');
+			},
+			error: function() {
+				_this.$el.removeClass('loading').html('<h3>We\'re having trouble receiving any data from Github at the moment. Please try again later.</h3>');
 			}
 		});
 	},

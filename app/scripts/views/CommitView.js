@@ -14,7 +14,7 @@ var CommitView = Backbone.View.extend({
 		this.$el.html(html);
 
 		if (debug) {
-			console.log('DEBUG: CommitView.render()');
+			console.log('DEBUG: Commit data passed to render function: ',this);
 		}
 
 		return this;

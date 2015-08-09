@@ -19,6 +19,7 @@ var ReposView = Backbone.View.extend({
 	fetchMore: function() {
 		var fetchedPage = parseInt(this.$el.attr('data-page'),10),
 			repoItems = new RepoItems(),
+			$fetchMore = $('#fetchMore'),
 			_this = this;
 
 		this.$el.attr('data-page',fetchedPage+1);
@@ -40,8 +41,11 @@ var ReposView = Backbone.View.extend({
 					if (debug) {
 						console.log('DEBUG: There are no more repos to fetch');
 					}
-					$('#fetchMore').html('<p>Nope. No more to load.</p>').attr('id','');
+					$fetchMore.html('<p>Nope. No more to load.</p>').attr('id','');
 				}
+			},
+			error: function() {
+				$fetchMore.html('<p>We\'re having trouble receiving any data from Github at the moment. Please try again later.</p>');
 			}
 		});
 	},
