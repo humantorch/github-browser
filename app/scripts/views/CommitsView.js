@@ -17,11 +17,11 @@ var CommitsView = Backbone.View.extend({
 		// console.log(commitItems);
 		var self = this;
 		commitItems.fetch({
-			success: function(f) {
+			success: function(commits) {
 				self.$el.empty();
 				// var commitsView = new CommitsView({model: commitItems.models});
 				// $(document.body).prepend(commitsView.render().$el);
-				f.each(function(commitItem) {
+				commits.each(function(commitItem) {
 					console.log(commitItem);
 					var view = new CommitView({model: commitItem, bus: self.bus});
 					self.$el.append(view.render().$el);

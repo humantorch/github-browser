@@ -29,7 +29,7 @@
   </script>
 
   <script type="text/html" id="commitTemplate">
-    <p><strong><%= commit.message %></strong></p><p><%= commit.committer.name %></p>
+    <p><strong><%= commit.message %></strong></p><p><%= commit.committer.name %></p><p><a href="<%= html_url %>" target="_blank">View on Github</a></p>
   </script>
 
 
@@ -39,19 +39,20 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/fartscroll/fartscroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/RepoItem.js"></script>
-        <script src="scripts/RepoItems.js"></script>
-        <script src="scripts/RepoView.js"></script>
-        <script src="scripts/ReposView.js"></script>
+        <script src="scripts/models/RepoItem.js"></script>
+        <script src="scripts/collections/RepoItems.js"></script>
+        <script src="scripts/views/RepoView.js"></script>
+        <script src="scripts/views/ReposView.js"></script>
 
-        <script src="scripts/CommitItem.js"></script>
-        <script src="scripts/CommitItems.js"></script>
-        <script src="scripts/CommitView.js"></script>
-        <script src="scripts/CommitsView.js"></script>
+        <script src="scripts/models/CommitItem.js"></script>
+        <script src="scripts/collections/CommitItems.js"></script>
+        <script src="scripts/views/CommitView.js"></script>
+        <script src="scripts/views/CommitsView.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

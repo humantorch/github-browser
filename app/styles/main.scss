@@ -41,7 +41,8 @@ body {
 // Global
 
 .viewList {
-    width: 40%;
+    width: 300px;
+    overflow: scroll;
     float: left;
     margin: 0; padding: 0;
     li {
