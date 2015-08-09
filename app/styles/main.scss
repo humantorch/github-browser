@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    background: transparent url(/images/onion-bg.jpg) center 75px no-repeat;
+    background: transparent url(/images/onion-bg.jpg) center top no-repeat;
     background-size: cover;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
@@ -17,6 +17,8 @@ body {
     font-family: 'Crimson Text', serif;
 }
 
+// Variables
+$onion: #006b3a;
 
 
 // Global
@@ -24,7 +26,7 @@ body {
 header {
     width: 100%;
     height: 75px;
-    background: #fafafa url(/images/onion.png) 3vw center no-repeat;
+    background: transparent url(/images/onion.png) 3vw center no-repeat;
     background-size: 325px;
     line-height: 75px;
     padding-left: 50%;
@@ -34,16 +36,28 @@ header {
 h1 {
     font-size: 1.4em;
     margin: 0;
+    text-shadow: 0 0 2px #fff, 0 0 2px #fff;
 }
 
 p {
     margin: 0.5em;
 }
 
+a {
+    text-decoration: none;
+    color: $onion;
+    font-weight: bold;
+    transition: color 0.2s ease;
+    &:hover {
+        color: black;
+        transition: color 0.2s ease;
+    }
+}
+
 .container {
     height: calc(94vh - 75px);
     width: 94vw;
-    margin: 3vh 3vw;
+    margin: 0 3vw 6vh;
     background-color: rgba(255,255,255,0.7);
 }
 
@@ -55,24 +69,58 @@ p {
     margin: 0; padding: 0;
     border: 1px black solid;
     border-collapse: collapse;
+    &.loading:before {
+        content: '';
+        position: absolute;
+        width: 200%; height: 200%;
+        top: -44%;
+        left: -27%;
+        z-index: -1;
+        background: transparent url(/images/spinner.png) center center no-repeat;
+        background-size: 100px;
+        animation-name: spin;
+        animation-duration: 1000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        transform: translateZ(0);
+    }
+    &.reposList li {
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(187, 187, 187, 0.5);
+            transition: background-color 0.2s ease;
+        }
+        &.selected {
+            background-color: $onion;
+            color: white;
+            transition: background-color 0.2s ease;
+        }
+    }
     li {
         list-style-type: none;
         border-bottom: 1px black solid;
         padding: 5px;
         transition: background-color 0.2s ease;
-        &:hover {
-            cursor: pointer;
-            background-color: #bbb;
-            transition: background-color 0.2s ease;
-        }
-        &.selected {
-            background-color: #006b3a;
-            color: white;
-            transition: background-color 0.2s ease;
-        }
         &.ahem {
+            h2 {
+                float: left;
+                margin: 0 0 0 7px;
+            }
             font-weight: bold;
+            text-align: right;
+            a:hover {
+                cursor: pointer;
+            }
         }
+    }
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(360deg);
+    } to {
+        transform: rotate(0deg);
     }
 }
 

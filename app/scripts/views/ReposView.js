@@ -1,7 +1,7 @@
 var ReposView = Backbone.View.extend({
 	tagName: 'ul',
 	id: 'repos',
-	className: 'viewList',
+	className: 'viewList reposList',
 	events: {
 		'click #fetchMore': 'fetchMore'
 	},
