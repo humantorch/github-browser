@@ -15,5 +15,4 @@ $(function() {
 	var commitsView = new CommitsView({bus: bus});
 	commitsView.render();
 
-	// fartscroll(1000);
 });

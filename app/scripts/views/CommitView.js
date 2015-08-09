@@ -1,6 +1,13 @@
 var CommitView = Backbone.View.extend({
 	tagName: 'li',
-	className: 'repo',
+	className: 'commit',
+
+	events: {
+		'click': 'commitClick'
+	},
+	commitClick: function(){
+		window.open(this.model.get('html_url'), '_blank');
+	},
 
 	initialize: function(options) {
 		// this.bus = options.bus;

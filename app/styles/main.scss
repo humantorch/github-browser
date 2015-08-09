@@ -9,43 +9,39 @@ html {
 }
 
 body {
-    background: #fafafa;
+    background: transparent url(/images/onion-bg.jpg) center 100px no-repeat;
+    background-size: cover;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
+    margin: 0; padding: 0;
 }
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
-    h1 {
-        font-size: 60px;
-        line-height: 1;
-        letter-spacing: -1px;
-    }
-}
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
 
 
 // Global
 
+header {
+    width: 100%;
+    height: 100px;
+    background: #fafafa url(/images/onion.png) 10px center no-repeat;
+    background-size: 325px;
+    line-height: 100px;
+    padding-left: 50%;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.4em;
+    margin: 0;
+}
+
 .container {
-    height: 80vh;
+    height: calc(80vh - 100px);
     margin-top: 10vh;
 }
 
 .viewList {
+    background-color: rgba(255,255,255,0.7);
     width: 50%;
     height: 100%;
     overflow: scroll;
