@@ -16,7 +16,7 @@ Finally, if you're really ambitious there's a Grunt task that builds and rsyncs 
 
 ###NOTES
 
-Harnessing the power of the Github API this app serves up all the public repository information from [The Onion's](http://github.com/theonion) development team, sorted by the most recently-updated repos. Selecting a repo will show a list of the most recent 30 commits, sorted by most recent.
+Harnessing the power of the Github API this app serves up all the public repository information from [The Onion's](http://github.com/theonion) development team, sorted by the most recently-updated repos. Selecting a repo will show a list of the most recent 100 commits, sorted by most recent.
 
 This app was built based on a vanilla Yeoman `yo webapp` installation with Backbone added afterwards. I could have used other methods of setting this up (Backbone-based generators, etc.) but I'm familiar with the Yeoman setup already and any Backbone generators I've found were old, outdated, and unmaintained for over a year.
 
@@ -30,6 +30,5 @@ In keeping with the spirit of the assignment ('I need to put something up that m
 * Use Require.js to load everything asynchronously, stop polluting the global namespace, and provide a more robust `r.js`-based build script
 * Allow the user to configure which organization/account to fetch repository data from
 * Selecting a commit would show a list of files changed in that commit
-* Allow the list of commits to go further back than the most recent 30. The functionality I've wired in to fetch additional repository information (by default Github's API only serves up 30 at a time) could easily be repurposed for this.
 * Allowing the user to change the metric by which repositories are listed (number of forks, most open issues, etc.)
 * Wider range of browser support. So far this has only been tested in Chrome/OS X. All functionality _should_ work elsewhere but the layout completely cracks in mobile browsers. FYI.
