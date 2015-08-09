@@ -19,7 +19,8 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: 'dist'
+    dist: 'dist',
+    rsync: 'humantorch@web433.webfaction.com:/home/humantorch/webapps/github_browser'
   };
 
   // Define the configuration for all the tasks
@@ -337,7 +338,7 @@ module.exports = function (grunt) {
 
     shell: {
       upload: {
-        command: 'rsync -avh dist/ humantorch@web433.webfaction.com:/home/humantorch/webapps/github_browser'
+        command: 'rsync -avh dist/ '+config.rsync
       }
     },
 
