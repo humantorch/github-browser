@@ -40,19 +40,31 @@ body {
 
 // Global
 
+.container {
+    height: 80vh;
+    margin-top: 10vh;
+}
+
 .viewList {
-    width: 300px;
+    width: 50%;
+    height: 100%;
     overflow: scroll;
     float: left;
     margin: 0; padding: 0;
+    border: 1px black solid;
+    border-collapse: collapse;
     li {
         list-style-type: none;
-        border: 1px black solid;
+        border-bottom: 1px black solid;
         padding: 5px;
         transition: background-color 0.2s ease;
         &:hover {
             cursor: pointer;
             background-color: #bbb;
+            transition: background-color 0.2s ease;
+        }
+        &.selected {
+            background-color: #f0f;
             transition: background-color 0.2s ease;
         }
     }

@@ -10,6 +10,7 @@ var ReposView = Backbone.View.extend({
 		this.model.on('add', this.onRepoAdded, this);
 	},
 	fetchMore: function() {
+		console.log('fetchmore');
 		var fetchedPage = parseInt(this.$el.attr('data-page'),10);
 		this.$el.attr('data-page',fetchedPage+1);
 
@@ -23,10 +24,11 @@ var ReposView = Backbone.View.extend({
 					repos.each(function(repoItem) {
 						var view = new RepoView({model: repoItem, bus: self.bus});
 						self.$el.append(view.render().$el);
+						self.$el.append($('#fetchMore'));
 					});
 				} else {
 					console.log('no more repos to fetch');
-					$('#fetchMore').remove();
+					$('#fetchMore').html('You\'ve got \'em all, bucko.').attr('id','');
 				}
 			}
 		});
@@ -34,11 +36,11 @@ var ReposView = Backbone.View.extend({
 	render: function() {
 		var self = this;
 
-		this.$el.attr('data-page','1').append('<button id="fetchMore">More</button>');
 		this.model.each(function(repoItem) {
 			var view = new RepoView({model: repoItem, bus: self.bus});
 			self.$el.append(view.render().$el);
 		});
+		this.$el.attr('data-page','1').append('<li id="fetchMore">More</li>');
 
 		return this;
 	}

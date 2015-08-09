@@ -3,7 +3,7 @@ var CommitView = Backbone.View.extend({
 	className: 'repo',
 
 	initialize: function(options) {
-		this.bus = options.bus;
+		// this.bus = options.bus;
 		if (!(options || options.model)) {
 			throw new Error('no model');
 		}

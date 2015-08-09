@@ -8,7 +8,7 @@ $(function() {
 		success: function() {
 			// console.log(repoItems);
 			var reposView = new ReposView({model: repoItems, bus: bus});
-			$(document.body).prepend(reposView.render().$el);
+			$('#container').prepend(reposView.render().$el);
 		}
 	});
 
