@@ -9,11 +9,12 @@ html {
 }
 
 body {
-    background: transparent url(/images/onion-bg.jpg) center 100px no-repeat;
+    background: transparent url(/images/onion-bg.jpg) center 75px no-repeat;
     background-size: cover;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
     margin: 0; padding: 0;
+    font-family: 'Crimson Text', serif;
 }
 
 
@@ -22,10 +23,10 @@ body {
 
 header {
     width: 100%;
-    height: 100px;
-    background: #fafafa url(/images/onion.png) 10px center no-repeat;
+    height: 75px;
+    background: #fafafa url(/images/onion.png) 3vw center no-repeat;
     background-size: 325px;
-    line-height: 100px;
+    line-height: 75px;
     padding-left: 50%;
     margin: 0;
 }
@@ -35,13 +36,18 @@ h1 {
     margin: 0;
 }
 
+p {
+    margin: 0.5em;
+}
+
 .container {
-    height: calc(80vh - 100px);
-    margin-top: 10vh;
+    height: calc(94vh - 75px);
+    width: 94vw;
+    margin: 3vh 3vw;
+    background-color: rgba(255,255,255,0.7);
 }
 
 .viewList {
-    background-color: rgba(255,255,255,0.7);
     width: 50%;
     height: 100%;
     overflow: scroll;
@@ -60,8 +66,12 @@ h1 {
             transition: background-color 0.2s ease;
         }
         &.selected {
-            background-color: #f0f;
+            background-color: #006b3a;
+            color: white;
             transition: background-color 0.2s ease;
+        }
+        &.ahem {
+            font-weight: bold;
         }
     }
 }

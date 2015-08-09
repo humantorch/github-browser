@@ -28,7 +28,7 @@ var ReposView = Backbone.View.extend({
 					});
 				} else {
 					console.log('no more repos to fetch');
-					$('#fetchMore').html('You\'ve got \'em all, bucko.').attr('id','');
+					$('#fetchMore').html('<p>Nope. No more to load.</p>').attr('id','');
 				}
 			}
 		});
@@ -40,7 +40,7 @@ var ReposView = Backbone.View.extend({
 			var view = new RepoView({model: repoItem, bus: self.bus});
 			self.$el.append(view.render().$el);
 		});
-		this.$el.attr('data-page','1').append('<li id="fetchMore">More</li>');
+		this.$el.attr('data-page','1').append('<li id="fetchMore" class="ahem"><p>Area man clicks here to load more repos.</p></li>');
 
 		return this;
 	}

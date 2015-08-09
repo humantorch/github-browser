@@ -16,7 +16,7 @@ var CommitsView = Backbone.View.extend({
 				self.$el.empty();
 				commits.each(function(commitItem) {
 					var view = new CommitView({model: commitItem, bus: self.bus});
-					self.$el.append(view.render().$el);
+					self.$el.append(view.render().$el).scrollTop(0);
 				});
 			}
 		});
