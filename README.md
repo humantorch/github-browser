@@ -27,8 +27,8 @@ There's no automated testing built into the app, but what I have put in is a "de
 In keeping with the spirit of the assignment ('I need to put something up that my users will actually be using on a daily basis, but I don't have days and days to work on it') here's a (non-exhaustive) list of things that I didn't do but would absolutely consider for a "phase 2" of the project, roughly in order of priority:
 
 * Automated testing with a framework such as Jasmine or Mocha
-* Use Require.js to load everything asynchronously and provide a more robust `r.js`-based build script
+* Use Require.js to load everything asynchronously, stop polluting the global namespace, and provide a more robust `r.js`-based build script
 * Allow the user to configure which organization/account to fetch repository data from
 * Selecting a commit would show a list of files changed in that commit
 * Allowing the user to change the metric by which repositories are listed (number of forks, most open issues, etc.)
-* Wider range of browser support. So far this has only been tested in Chrome/OS X.
+* Wider range of browser support. So far this has only been tested in Chrome/OS X. All functionality _should_ work elsewhere but the layout completely cracks in mobile browsers. FYI.

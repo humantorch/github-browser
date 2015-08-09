@@ -4,13 +4,14 @@ var CommitView = Backbone.View.extend({
 
 	initialize: function(options) {
 		if (!(options || options.model)) {
-			throw new Error('no model');
+			throw new Error('No model present.');
 		}
 	},
 
 	render: function() {
 		var template = _.template($('#commitTemplate').html()),
 			html = template(this.model.toJSON());
+
 		this.$el.html(html);
 
 		if (debug) {
