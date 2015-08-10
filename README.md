@@ -12,6 +12,8 @@ To create a production build (image optimised, JS minified and concatenated, Sas
 
 Finally, if you're really ambitious there's a Grunt task that builds and rsyncs the app to a server. Simply replace the server address/file path the `config` section of the Gruntfile.js (starts on line 20) with your own information and run `grunt deploy`.
 
+**If any of the above isn't working for whatever reason, please do not hesitate to try to contact me. The project is also running online at http://onion.prayingmadness.com if all else fails.**
+
 ###NOTES
 
 Harnessing the power of the Github API this app serves up all the public repository information from [The Onion's](http://github.com/theonion) development team, sorted by the most recently-updated repos. Selecting a repo will show a list of the most recent 100 commits, sorted by most recent.
