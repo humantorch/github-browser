@@ -7,9 +7,11 @@ var RepoView = Backbone.View.extend({
 	},
 
 	onClick: function() {
-		this.bus.trigger('repoSelected', this.model);
-		$('#repos').find('.selected').removeClass('selected');
-		this.$el.addClass('selected');
+		if (!(this.$el.hasClass('selected'))) {
+			this.bus.trigger('repoSelected', this.model);
+			$('#repos').find('.selected').removeClass('selected');
+			this.$el.addClass('selected');
+		}
 	},
 
 	initialize: function(options) {
