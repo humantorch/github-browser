@@ -18,6 +18,8 @@ Finally, if you're really ambitious there's a Grunt task that builds and rsyncs 
 
 Harnessing the power of the Github API this app serves up all the public repository information from [The Onion's](http://github.com/theonion) development team, sorted by the most recently-updated repos. Selecting a repo will show a list of the most recent 100 commits, sorted by most recent.
 
+<sub>(Side note: I _seriously_ considered including [fartscroll.js](https://github.com/theonion/fartscroll.js) in the app but thought wiser of it in the end. You're welcome.)</sub>
+
 This app was built based on a vanilla Yeoman `yo webapp` installation with Backbone added afterwards. I could have used other methods of setting this up (Backbone-based generators, etc.) but I'm familiar with the Yeoman setup already and any Backbone generators I've found were old, outdated, and unmaintained for over a year.
 
 It's worth noting that at this point I (somewhat embarrassingly) have had _very_ little hands-on experience with Backbone or MVC programming in general. This, of course, begs the question as to why I built the app this way. To be honest it was a lot more work than expected, and took far longer than building it otherwise should have. I'm confident that, had I built this without using Backbone, I could have knocked this out in a couple of hours. However, the resultant app from that type of exercise would have been almost completely inflexible and unable to expand/grow to meet future needs and features without a not-insignificant degree of re-engineering.
