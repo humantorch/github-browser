@@ -57,7 +57,7 @@ var ReposView = Backbone.View.extend({
 			$org = $(document.body).attr('data-org');
 
 		if (this.model.length === 0) {
-			this.$el.empty().append('<li id="" class="ahem"><p>Sorry, this user appears to have no repos available to browser. Try another?</p></li>');
+			this.$el.empty().append('<li id="" class="ahem"><p>Sorry, this user appears to have no repos available to browse. Try another?</p></li>');
 			$('#commitsList').empty().append('<li id="visitRepo" class="ahem"><p>Recent commits</p>');
 			$('header').css('background-image', 'url()');
 		} else {
