@@ -17,7 +17,7 @@ body {
 }
 
 // Variables
-$onion: #e50914;
+$netflix-red: #e50914;
 
 
 // Page styles
@@ -41,7 +41,7 @@ p {
 
 a {
     text-decoration: none;
-    color: $onion;
+    color: $netflix-red;
     font-weight: bold;
     transition: color 0.2s ease;
     &:hover {
@@ -80,14 +80,14 @@ a {
         animation-timing-function: linear;
         transform: translateZ(0);
     }
-    &.reposList li {
+    &.reposList li:not(.ahem) {
         &:hover {
             cursor: pointer;
             background-color: rgba(187, 187, 187, 0.5);
             transition: background-color 0.2s ease;
         }
         &.selected {
-            background-color: $onion;
+            background-color: $netflix-red;
             color: white;
             transition: background-color 0.2s ease;
         }
@@ -98,8 +98,9 @@ a {
         padding: 5px;
         transition: background-color 0.2s ease;
         &.ahem {
-            background-color: $onion;
+            background-color: $netflix-red;
             color: white;
+            transition: color 0.2s ease;
             p {
                 font-size: 1.3em;
             }
@@ -109,6 +110,11 @@ a {
                 &:hover {
                     color: white;
                 }
+            }
+            &.loadmore:hover {
+                cursor: pointer;
+                color: black;
+                transition: color 0.2s ease;
             }
         }
     }
