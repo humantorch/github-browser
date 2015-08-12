@@ -19,8 +19,7 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: 'dist',
-    rsync: 'humantorch@web433.webfaction.com:/home/humantorch/webapps/github'
+    dist: 'dist'
   };
 
   // Define the configuration for all the tasks
@@ -438,8 +437,4 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.registerTask('deploy',[
-    'default',
-    'shell:upload'
-  ]);
 };
