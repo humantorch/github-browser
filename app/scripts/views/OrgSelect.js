@@ -10,6 +10,7 @@ var OrgSelect = Backbone.View.extend({
 	onOrgSelect: function() {
 		var org = $('#gh-org').val(),
 			self = this;
+		$('body').attr('data-org', org);
 		$('#gh-org').val('');
 
 		var repoItems = new RepoItems({ });
@@ -18,6 +19,10 @@ var OrgSelect = Backbone.View.extend({
 
 		repoItems.fetch({
 			success: function() {
+				if ($('#repos').length > 0) {
+					$('#repos').remove();
+				}
+				$('#commitslist').empty();
 				if (debug) {
 					console.log('DEBUG: Repos data:', repoItems);
 				}

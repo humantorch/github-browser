@@ -23,7 +23,7 @@ var ReposView = Backbone.View.extend({
 			_this = this;
 
 		this.$el.attr('data-page',fetchedPage+1);
-		repoItems.url += '&page='+(fetchedPage+1);
+		repoItems.url = 'https://api.github.com/users/'+$(document.body).attr('data-org')+'/repos?sort=pushed&access_token=6efa980a1997445eabbd9c90c3a0bd359e942e42&page='+(fetchedPage+1);
 
 		if (debug) {
 			console.log('DEBUG: New repo data: ',repoItems);
@@ -32,6 +32,7 @@ var ReposView = Backbone.View.extend({
 		repoItems.fetch({
 			success: function(repos) {
 				if (repos.length > 0) {
+
 					repos.each(function(repoItem) {
 						var view = new RepoView({model: repoItem, bus: _this.bus});
 						_this.$el.append(view.render().$el);
@@ -52,6 +53,7 @@ var ReposView = Backbone.View.extend({
 
 	render: function() {
 		var _this = this;
+		_this.$el.append('<li class="ahem"><h1>Recently-updated repos</h1></li>');
 
 		this.model.each(function(repoItem) {
 			var view = new RepoView({model: repoItem, bus: _this.bus});
