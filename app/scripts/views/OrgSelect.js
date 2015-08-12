@@ -1,11 +1,16 @@
 var OrgSelect = Backbone.View.extend({
 	events: {
 		'click #fire': 'onOrgSelect',
-		'enter #gh-org': 'onOrgSelect'
+		'enter #gh-org': 'onOrgSelect',
+		'focus #gh-org': 'emptyField'
 	},
 
 	initialize: function(options) {
 		this.bus = options.bus;
+	},
+
+	emptyField: function() {
+		$('#gh-org').val('');
 	},
 
 	onOrgSelect: function() {
@@ -41,6 +46,7 @@ var OrgSelect = Backbone.View.extend({
 			error: function() {
 				$('#repos').empty().append('<li id="" class="ahem"><p>Sorry, that user doesn\'t appear to exist. Try another?</p></li>');
 				$('header').css('background-image', 'url()');
+				$('#commitslist').empty().append('<li id="visitRepo" class="ahem"><p>Recent commits</p>');
 			}
 		});
 	}
