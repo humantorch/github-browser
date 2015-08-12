@@ -13,16 +13,18 @@ var OrgSelect = Backbone.View.extend({
 		$('body').attr('data-org', org);
 		$('#gh-org').val('');
 
-		var repoItems = new RepoItems({ });
+		var repoItems = new RepoItems({el: '#repos' });
 
 		repoItems.url = 'https://api.github.com/users/'+org+'/repos?sort=pushed&access_token=6efa980a1997445eabbd9c90c3a0bd359e942e42';
 
 		repoItems.fetch({
 			success: function() {
+
 				if ($('#repos').length > 0) {
+					// $('header').css('background-image', 'url('+repoItems.models[0].get('owner').avatar_url+')');
 					$('#repos').remove();
 				}
-				$('#commitslist').empty();
+				$('#commitslist').empty().append('<li id="visitRepo" class="ahem"><p>Recent commits</p>');
 				if (debug) {
 					console.log('DEBUG: Repos data:', repoItems);
 				}
@@ -33,7 +35,7 @@ var OrgSelect = Backbone.View.extend({
 				commitsView.render();
 			},
 			error: function() {
-				$('#container').html('<h3>We\'re having trouble receiving any data from Github at the moment. Please try again later.</h3>');
+				$('#repos').empty().append('<li id="" class="ahem"><p>Sorry, that user doesn\'t appear to exist. Try another?</p></li>');
 			}
 		});
 	}

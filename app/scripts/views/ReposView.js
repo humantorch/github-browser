@@ -52,14 +52,21 @@ var ReposView = Backbone.View.extend({
 	},
 
 	render: function() {
-		var _this = this;
-		_this.$el.append('<li class="ahem"><h1>Recently-updated repos</h1></li>');
+		var _this = this,
+			$org = $(document.body).attr('data-org');
 
-		this.model.each(function(repoItem) {
-			var view = new RepoView({model: repoItem, bus: _this.bus});
-			_this.$el.append(view.render().$el);
-		});
-		this.$el.attr('data-page','1').append('<li id="fetchMore" class="ahem"><p>Area man clicks here to load more repos.</p></li>');
+		if (this.model.length === 0) {
+			this.$el.empty().append('<li id="" class="ahem"><p>Sorry, this user appears to have no repos available to browser. Try another?</p></li>');
+			$('#commitsList').empty().append('<li id="visitRepo" class="ahem"><p>Recent commits</p>');
+		} else {
+			this.$el.empty().append('<li class="ahem"><p>Recently-updated repos – <a href="http://github.com/'+$org+'" target="_blank">Visit '+$org+' on Github</a></p></li>');
+			this.model.each(function(repoItem) {
+				var view = new RepoView({model: repoItem, bus: _this.bus});
+				_this.$el.append(view.render().$el);
+			});
+			this.$el.attr('data-page','1').append('<li id="fetchMore" class="ahem"><p>Load more repos.</p></li>');
+		}
+
 
 		return this;
 	}
