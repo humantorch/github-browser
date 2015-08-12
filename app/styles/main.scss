@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    background: transparent url(/images/onion-bg.jpg) center top no-repeat;
+    background: transparent url() center top no-repeat;
     background-size: cover;
     color: #333;
     margin: 0; padding: 0;
@@ -17,14 +17,14 @@ body {
 }
 
 // Variables
-$onion: #006b3a;
+$onion: #e50914;
 
 
 // Page styles
 header {
     width: 100%;
     height: 75px;
-    background: transparent url(/images/onion.png) 3vw center no-repeat;
+    background: transparent url() 3vw center no-repeat;
     background-size: 325px;
     line-height: 75px;
     padding-left: 50%;

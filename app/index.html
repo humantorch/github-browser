@@ -23,8 +23,10 @@
     </head>
 
     <body>
-        <header>
-            <h1>America's Finest Open Source Repos.</h1>
+        <header id="orgselect">
+            <!-- <h1>America's Finest Open Source Repos.</h1> -->
+            <input type="text" id="gh-org">
+            <button id="fire">Go.</button>
         </header>
 
         <div id="container" class="container">
@@ -53,8 +55,10 @@
         <script src="scripts/main.js"></script>
         <script src="scripts/models/RepoItem.js"></script>
         <script src="scripts/collections/RepoItems.js"></script>
+
         <script src="scripts/views/RepoView.js"></script>
         <script src="scripts/views/ReposView.js"></script>
+        <script src="scripts/views/OrgSelect.js"></script>
 
         <script src="scripts/models/CommitItem.js"></script>
         <script src="scripts/collections/CommitItems.js"></script>

@@ -20,7 +20,7 @@ module.exports = function (grunt) {
   var config = {
     app: 'app',
     dist: 'dist',
-    rsync: 'humantorch@web433.webfaction.com:/home/humantorch/webapps/github_browser'
+    rsync: 'humantorch@web433.webfaction.com:/home/humantorch/webapps/github'
   };
 
   // Define the configuration for all the tasks
