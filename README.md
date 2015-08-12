@@ -2,7 +2,7 @@
 
 ###INSTALLATION AND SETUP
 
-To build and run the project you need to have [Yeoman](http://yeoman.io/learning/index.html "Getting started with Yeoman") installed (with all it's dependencies). Click on the link to see how to get started. TL;DR if you've got Node and npm installed, then `npm install -g yo bower grunt-cli grunt` should get you where you need to go.
+To build and run the project you need to have [Yeoman](http://yeoman.io/learning/index.html "Getting started with Yeoman") installed (with all it's dependencies). Click on the link to see how to get started. TL;DR if you've got Node and npm installed, then `npm install -g yo bower grunt-cli gulp` should get you where you need to go.
 
 After unzipping the project, you will need to run `npm install && bower install` from the directory to install all the required node modules and bower packages. You might need to run these commands with admin rights: `sudo npm install` and `sudo bower install` and then type in your password.
 
