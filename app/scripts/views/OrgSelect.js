@@ -20,8 +20,9 @@ var OrgSelect = Backbone.View.extend({
 
 		repoItems.fetch({
 			success: function() {
+				var av;
 				if (repoItems.models[0] !== undefined) {
-					var avatar = repoItems.models[0].get('owner').avatar_url;
+					av = repoItems.models[0].get('owner').avatar_url;
 				}
 
 				if ($('#repos').length > 0) {
@@ -31,7 +32,7 @@ var OrgSelect = Backbone.View.extend({
 				if (debug) {
 					console.log('DEBUG: Repos data:', repoItems);
 				}
-				var reposView = new ReposView({model: repoItems, bus: self.bus, avatar: avatar}),
+				var reposView = new ReposView({model: repoItems, bus: self.bus, avatar: av}),
 					commitsView = new CommitsView({bus: self.bus});
 
 				$('#container').prepend(reposView.render().$el);

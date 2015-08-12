@@ -8,5 +8,5 @@ $(function() {
 		if(e.keyCode === 13){
 			$(this).trigger('enter');
 		}
-	 });
+	}).trigger('enter').val('netflix');
 });
