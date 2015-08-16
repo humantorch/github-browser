@@ -24,7 +24,7 @@ var ReposView = Backbone.View.extend({
 			self = this;
 
 		this.$el.attr('data-page',fetchedPage+1);
-		repoItems.url = 'https://api.github.com/users/'+$(document.body).attr('data-org')+'/repos?sort=pushed&access_token=6efa980a1997445eabbd9c90c3a0bd359e942e42&page='+(fetchedPage+1);
+		repoItems.url = 'https://api.github.com/users/'+$(document.body).attr('data-org')+'/repos?sort=pushed&page='+(fetchedPage+1);
 
 		if (debug) {
 			console.log('DEBUG: New repo data: ',repoItems);

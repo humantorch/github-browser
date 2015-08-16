@@ -15,7 +15,7 @@ var CommitsView = Backbone.View.extend({
 			_this = this;
 
 		this.$el.empty().append('<li id="visitRepo" class="ahem"><p>Recent commits</p>').addClass('loading');
-		commitItems.url = commits_url+'?per_page=100&access_token=6efa980a1997445eabbd9c90c3a0bd359e942e42';
+		commitItems.url = commits_url+'?per_page=100';
 
 		commitItems.fetch({
 			success: function(commits) {
