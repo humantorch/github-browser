@@ -15,3 +15,10 @@ Finally, if you're really ambitious there's a Grunt task that builds and rsyncs 
 ###NOTES
 
 Harnessing the power of the Github API this app serves up all the public repository information from any user or organization, sorted by the most recently-updated repos. Selecting a repo will show a list of the most recent 100 commits, sorted by most recent.
+
+####Github Access Tokens
+
+This app no longer uses authenticated requests, so using it heavily will quickly hit the [API rate limit](https://developer.github.com/v3/#rate-limiting).
+
+
+//TODO: make that a config option, allowing anyone to easily add their own [Github access token](https://github.com/blog/1509-personal-api-tokens), bypassing the rate limit.
