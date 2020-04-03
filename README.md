@@ -12,7 +12,7 @@ After unzipping the project, you will need to run `npm install && bower install`
 
 When this is done you can start up a local server with livereload and file watching by running `grunt serve`.
 
-To create a production build (image optimised, JS minified and concatenated, Sass compiled to CSS, etc.) run `grunt` to output a production-ready build into the /dist directory. This can be uploaded to a server or run from a local server (note: simply double-clicking on `index.html` won't work correctly due to file pathing and potential ajax security rules, etc.).
+To create a production build (image optimised, JS minified and concatenated, Sass compiled to CSS, etc.) run `grunt` to output a production-ready build into the /dist directory. This can be uploaded to a server or run from a local server (note: simply double-clicking on `index.html` won't work correctly due to file pathing and potential ajax security rules, etc.). Assuming you've got Python installed, `cd dist && python -m SimpleHTTPServer 9000` will run it at http://0.0.0.0:9000 for you.
 
 Finally, if you're really ambitious there's a Grunt task that builds and rsyncs the app to a server. Simply replace the server address/file path the `config` section of the Gruntfile.js (starts on line 20) with your own information and run `grunt deploy`.
 
