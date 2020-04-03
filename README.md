@@ -2,11 +2,13 @@
 
 ### INSTALLATION AND SETUP
 
-**Note: as of April 2020 this project is about 6 years old, it still runs but obviously using some pretty outdated dependencies. It still runs locally just fine but installing it will throw a _ton_ of deprecation warnings and errors, you've been warned. The likelihood of me ever updating this is close to zero.**
+#### Live version available at: https://github.prayingmadness.com
+
+##### Note: as of April 2020 this project is about 6 years old, it still runs but obviously using some pretty outdated dependencies. It still runs locally just fine but installing it will throw a _ton_ of deprecation warnings and errors, you've been warned. The likelihood of me ever updating this is close to zero.
 
 To build and run the project you need to have [Yeoman](http://yeoman.io/learning/index.html "Getting started with Yeoman") installed (with all it's dependencies). Click on the link to see how to get started. TL;DR if you've got Node and npm installed, then `npm install -g yo bower grunt-cli gulp` should get you where you need to go. You'll also need Ruby and Sass installed – on a Mac this is done via `gem install sass` (possibly requiring `sudo` depending on your setup).
 
-After unzipping the project, you will need to run `npm install && bower install` from the directory to install all the required node modules and bower packages. You might need to run these commands with admin rights: `sudo npm install` and `sudo bower install` and then type in your password.
+After unzipping the project, you will need to run `npm install && bower install` from the directory to install all the required node modules and bower packages (again, may require `sudo` on your device). 
 
 When this is done you can start up a local server with livereload and file watching by running `grunt serve`.
 
