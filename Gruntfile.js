@@ -19,7 +19,8 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: 'dist'
+    dist: 'dist',
+    rsync: 'your_server_path_here'
   };
 
   // Define the configuration for all the tasks
@@ -411,7 +412,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'connect:test',
-      'mocha'
+      //'mocha'
     ]);
   });
 
